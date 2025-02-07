@@ -102,30 +102,58 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 
 ## 🏛 Project Architecture
 
+[!Project Architecture .png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline-Using-AWS-Glue-Kinesis-DynamoDB-Athena-and-QuickSight/blob/main/Project%20Architecture%20.png)
+
+### Data Flow:
+
+• 1, Mock data generator → DynamoDB
+
+• 2, 3 DynamoDB Stream → Kinesis Firehose
+
+• 4, Firehose → Lambda (Transformation)
+
+• 5, 6, 7, 8, 9 Raw S3 → Glue ETL (Hudi Processing)
+
+• 10, 11 Processed S3 → Athena → QuickSight
+
 
 This project follows a real-time data ingestion and processing pipeline:
 	
  1.	Data Generation (Mock Transactions)
-	•	A Python script (mock_crypto_data_to_dynamodb.py) continuously generates mock crypto transactions.
-	•	The data is inserted into AWS DynamoDB.
+
+• A Python script (mock_crypto_data_to_dynamodb.py) continuously generates mock crypto transactions.
+
+• The data is inserted into AWS DynamoDB.
 
 2.	Data Streaming & Transformation
-	•	DynamoDB Streams captures changes and forwards them to AWS Kinesis Firehose.
-	•	A Lambda function (lambda_transformer.py) transforms the data from DynamoDB’s format to JSON.
+
+• DynamoDB Streams captures changes and forwards them to AWS Kinesis Firehose.
+
+• A Lambda function (lambda_transformer.py) transforms the data from DynamoDB’s format to JSON.
 	
  3.	Real-Time ETL Processing (AWS Glue)
-	•	AWS Glue reads data from S3 (landing zone).
-	•	Performs data transformations, including:
-	•	Risk flagging based on trade value.
-	•	Price normalization across exchanges.
-	•	Fee adjustments based on transaction size.
-	•	User categorization based on trade volume.
-	•	Writes processed data into an AWS S3-based Hudi table.
+
+• AWS Glue reads data from S3 (landing zone).
+
+• Performs data transformations, including:
+
+• Risk flagging based on trade value.
+
+• Price normalization across exchanges.
+
+• Fee adjustments based on transaction size.
+
+• User categorization based on trade volume.
+
+• Writes processed data into an AWS S3-based Hudi table.
 	
  4.	Data Storage & Analytics
-	•	Processed Data: Stored in an S3 Hudi table (processed_crypto_txn).
-	•	Querying: AWS Athena is used to query Hudi tables.
-	•	Visualization: QuickSight dashboards are built on Athena queries.
+
+• Processed Data: Stored in an S3 Hudi table (processed_crypto_txn).
+
+• Querying: AWS Athena is used to query Hudi tables.
+
+• Visualization: QuickSight dashboards are built on Athena queries.
 
 
 
