@@ -42,7 +42,34 @@ Crypto-Data-Processing/
 
 • ACID Compliance: Apache Hudi for UPSERT operations
 
+## 🛠 Prerequisites
 
+Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you have the following:
+
+1. AWS Account & Services
+	
+ •	An AWS Account with access to:
+	
+ •	AWS Glue (for ETL and data transformation)
+	
+ •	AWS DynamoDB (for storing raw crypto transactions)
+	
+ •	AWS Kinesis Firehose (for real-time streaming)
+	
+ •	AWS Lambda (for data transformation)
+	
+ •	AWS S3 (for storing raw and processed data)
+	
+ •	AWS Athena (for querying processed data)
+	
+ •	AWS QuickSight (for visualizing insights)
+
+2. AWS CLI & SDKs
+	
+ •	Install and configure AWS CLI:
+
+```pip install awscli  
+aws configure  ```
 
 
 
