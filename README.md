@@ -257,7 +257,7 @@ Step 6: Visualize Data using QuickSight
 
 📌 Screenshot: Crypto_Trading_Insights_Dashboard_using_QuickSight.png
 
-link: https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/78dd677e-34d1-4a4f-9b78-82a2f97863ba/views/fe261a5f-630c-404e-ac18-8429d246000e?directory_alias=DataEngineering-QuickSight-Dashboard
+📎 link: https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/78dd677e-34d1-4a4f-9b78-82a2f97863ba/views/fe261a5f-630c-404e-ac18-8429d246000e?directory_alias=DataEngineering-QuickSight-Dashboard
 
 📌 Screenshot: QuickSight_File_Screenshot.png
 
