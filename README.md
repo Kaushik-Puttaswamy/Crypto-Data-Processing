@@ -68,10 +68,16 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 	
  • Install and configure AWS CLI:
 
-```pip install awscli  
-aws configure  
+```pip install awscli```
 
+```aws configure``` 
 
+3. Python & Dependencies
+	
+• Install Python 3.x and required libraries:
+
+```pip install faker``` 
+```pip install boto3``` 
 
 
 
