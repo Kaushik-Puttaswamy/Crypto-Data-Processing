@@ -77,6 +77,7 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 • Install Python 3.x and required libraries:
 
 ```pip install faker``` 
+
 ```pip install boto3``` 
 
 
