@@ -42,7 +42,7 @@ Crypto-Data-Processing/
 
 • ACID Compliance: Apache Hudi for UPSERT operations
 
-## 🛠 Prerequisites
+## ✅  Prerequisites
 
 Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you have the following:
 
@@ -106,15 +106,15 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 
 ### Data Flow:
 
-	• 1, Mock data generator → DynamoDB
+• 1, Mock data generator → DynamoDB
 
-	• 2, 3 DynamoDB Stream → Kinesis Firehose
+• 2, 3 DynamoDB Stream → Kinesis Firehose
 
-	• 4, Firehose → Lambda (Transformation)
+• 4, Firehose → Lambda (Transformation)
 
-	• 5, 6, 7, 8, 9 Raw S3 → Glue ETL (Hudi Processing)
+• 5, 6, 7, 8, 9 Raw S3 → Glue ETL (Hudi Processing)
 
-	• 10, 11 Processed S3 → Athena → QuickSight
+• 10, 11 Processed S3 → Athena → QuickSight
 
 
 This project follows a real-time data ingestion and processing pipeline:
@@ -155,26 +155,184 @@ This project follows a real-time data ingestion and processing pipeline:
 
 	• Visualization: QuickSight dashboards are built on Athena queries.
 
+## 🛠 Setup & Execution Steps
+
+Step 1: Configure AWS DynamoDB
+
+• Create a DynamoDB Table (CryptoTransactions).
+
+• Enable DynamoDB Streams to capture changes.
+
+📌 Screenshot: DynamoDB_Table_Setup_with_Data_stream_and_CDC_enabled.png
+
+Step 2: Setup AWS Kinesis Firehose
+	
+ • Create a Kinesis Firehose delivery stream.
+	
+ • Configure Firehose to read from DynamoDB Streams and deliver data to S3.
+
+📌 Screenshot: Firehose_Stream_Setup.png
+
+📌 Screenshot: Kinesis_Setup_with_Shard_Showing_Records.png
+
+Step 3: Create & Deploy AWS Lambda Function
+
+• Deploy lambda_transformer.py to process data from Kinesis Firehose.
+
+• This function:
+	
+	• Converts DynamoDB JSON format into standard JSON.
+	
+ 	• Adds metadata (event type, timestamp, event ID).
+	
+ 	• Outputs transformed data to Kinesis Firehose.
+
+📌 Screenshot: Lambda_Function_for_Data_Transformation.png
+
+📌 Screenshot: Lambda_Function_Permission_Policies.png
 
 
+Step 4: Setup AWS Glue for ETL
+	
+ • Create an AWS Glue Crawler to catalog data from S3 (Raw Transactions).
+	
+ • Define a Glue ETL Job to process data using crypto_nrt_etl_glue_job.py.
+	
+ • Glue ETL performs:
+	
+ • Data Transformation
+	
+ • Trade Risk Classification
+	
+ • Price Normalization
+	
+ • User Categorization
+	
+ • Hudi-based storage in S3
 
 
+📌 Screenshot: Glue_Database_Setup.png
+
+📌 Screenshot: Glue_Table_for_Raw_Processed_Data.png
+
+📌 Screenshot: Glue_ETL_Setup.png
+
+📌 Screenshot: Glue_ETL_Job_Status.png
+
+Step 5: Query Data using AWS Athena
+	
+ • AWS Athena is used to run SQL queries on processed crypto transactions stored in Hudi tables.
+	
+ • Sample query:
 
 
+``` select * from crypto.processed_crypto_txn limit 10; ```
+
+``` select count(*) from crypto.processed_crypto_txn limit 10; ```
+
+``` SELECT * FROM crypto.processed_crypto_txn WHERE risk_flag = 'MEDIUM_RISK'; ```
+
+📌 Screenshot: Athena_Query_Execution_for_Processed_Data.png
+
+Step 6: Visualize Data using QuickSight
+	
+ •	AWS QuickSight connects to Athena and visualizes trade risk trends, price normalization, and user activity.
+	
+ 
+ Insights include:
+
+ • Trade Fee Collected
+ 
+ • Exchange Comparison
+	
+ • Trading Volume per Trading Pair
+	
+ • Risk Distribution
+	
+ • Number of Trades by Status
+ 
+ • Order Type Distribution
+ 
+ • User Category Distribution
+
+📌 Screenshot: Crypto_Trading_Insights_Dashboard_using_QuickSight.png
+
+link: https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/78dd677e-34d1-4a4f-9b78-82a2f97863ba/views/fe261a5f-630c-404e-ac18-8429d246000e?directory_alias=DataEngineering-QuickSight-Dashboard
+
+📌 Screenshot: QuickSight_File_Screenshot.png
+
+Step 7: Automate Execution with AWS Triggers
+	
+ • Set up AWS Glue triggers to run ETL jobs automatically based on new data arrival.
+
+📌 Screenshot: Trigger_Setup.png
+
+## 🔥 Key Features & Enhancements
+
+✅ Real-Time Processing: Uses DynamoDB Streams + Kinesis Firehose for event-driven processing.
+
+✅ Risk-Based Classification: Flags transactions based on trade value.
+
+✅ Price Normalization: Adjusts price across multiple exchanges for fair comparison.
+
+✅ User Categorization: Identifies VIP Traders, Active Traders, and Casual Traders.
+
+✅ Athena & QuickSight Analytics: Enables ad-hoc analysis and business intelligence dashboards.
+
+✅ Efficient Storage with Hudi: Ensures incremental updates & faster queries using Apache Hudi.
+
+## 🚀 How to Run Locally?
+
+Step 1: Install Dependencies
+
+Ensure you have Python 3.x and the required AWS libraries:
+
+``` pip install boto3 faker ```
+
+Step 2: Simulate Transactions (Mock Data)
+
+Run the script to insert transactions into DynamoDB:
+
+``` python mock_crypto_data_to_dynamodb.py ```
+
+Step 3: Deploy AWS Resources
+	
+ 1.	Deploy Lambda function (lambda_transformer.py).
+	
+ 2.	Configure Kinesis Firehose and connect it to DynamoDB Streams.
+	
+ 3.	Setup Glue Crawler & Glue ETL Job.
+
+Step 4: Run AWS Glue ETL
+
+Manually trigger the Glue ETL job:
+
+``` aws glue start-job-run --job-name crypto_nrt_etl_glue_job ```
+
+Step 5: Query & Analyze Data
+
+Use AWS Athena or QuickSight to analyze processed data.
+
+## 📌 Future Enhancements
 
 
+🔹 Add Machine Learning Anomaly Detection for fraud detection.
 
+🔹 Implement Kafka instead of Kinesis for higher scalability.
 
+🔹 Support Multi-Region Data Processing for global transaction tracking.
 
+🔹 Enhance Data Governance with AWS Lake Formation.
 
+## 🤝 Contributors
+	
+ • Kaushik Puttaswamy  - Aspiring Data Engineer
 
+📧 For queries, reach out at ```kaushik.p9699@gmail.com```
 
+## 🎯 Conclusion
 
+This project demonstrates real-time crypto transaction processing using AWS Glue, DynamoDB, and Apache Hudi. The system is scalable, efficient, and provides insights into high-risk transactions, exchange price variations, and trading behaviors.
 
+🚀 Now you’re ready to build a robust data pipeline for crypto analytics! 🎉
 
-
-
-
-
-
-https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/78dd677e-34d1-4a4f-9b78-82a2f97863ba/views/fe261a5f-630c-404e-ac18-8429d246000e?directory_alias=DataEngineering-QuickSight-Dashboard
