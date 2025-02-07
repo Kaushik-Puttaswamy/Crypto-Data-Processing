@@ -30,6 +30,18 @@ Crypto-Data-Processing/
 
 └── README.md                                 # Project documentation (this file)
 
+## ✨ Key Features
+
+• Real-Time Risk Analysis: Flag high-value trades (>$500k)
+
+• Multi-Exchange Normalization: Price adjustments per exchange
+
+• Dynamic Fee Calculation: Volume-based fee discounts
+
+• Time-Bucket Aggregation: Hourly trade analysis
+
+• ACID Compliance: Apache Hudi for UPSERT operations
+
 
 
 
