@@ -48,28 +48,28 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 
 1. AWS Account & Services
 	
- •	An AWS Account with access to:
+ • An AWS Account with access to:
 	
- •	AWS Glue (for ETL and data transformation)
+ • AWS Glue (for ETL and data transformation)
 	
- •	AWS DynamoDB (for storing raw crypto transactions)
+ • AWS DynamoDB (for storing raw crypto transactions)
 	
- •	AWS Kinesis Firehose (for real-time streaming)
+ • AWS Kinesis Firehose (for real-time streaming)
 	
- •	AWS Lambda (for data transformation)
+ • AWS Lambda (for data transformation)
 	
- •	AWS S3 (for storing raw and processed data)
+ • AWS S3 (for storing raw and processed data)
 	
- •	AWS Athena (for querying processed data)
+ • AWS Athena (for querying processed data)
 	
- •	AWS QuickSight (for visualizing insights)
+ • AWS QuickSight (for visualizing insights)
 
 2. AWS CLI & SDKs
 	
- •	Install and configure AWS CLI:
+ • Install and configure AWS CLI:
 
 ```pip install awscli  
-aws configure  ```
+aws configure  
 
 
 
