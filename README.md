@@ -181,11 +181,11 @@ Step 3: Create & Deploy AWS Lambda Function
 
 • This function:
 	
-	• Converts DynamoDB JSON format into standard JSON.
+ • Converts DynamoDB JSON format into standard JSON.
 	
- 	• Adds metadata (event type, timestamp, event ID).
+ • Adds metadata (event type, timestamp, event ID).
 	
- 	• Outputs transformed data to Kinesis Firehose.
+ • Outputs transformed data to Kinesis Firehose.
 
 📌 Screenshot: Lambda_Function_for_Data_Transformation.png
 
@@ -236,7 +236,7 @@ Step 5: Query Data using AWS Athena
 
 Step 6: Visualize Data using QuickSight
 	
- •	AWS QuickSight connects to Athena and visualizes trade risk trends, price normalization, and user activity.
+ • AWS QuickSight connects to Athena and visualizes trade risk trends, price normalization, and user activity.
 	
  
  Insights include:
@@ -324,9 +324,9 @@ Use AWS Athena or QuickSight to analyze processed data.
 
 🔹 Enhance Data Governance with AWS Lake Formation.
 
-## 🤝 Contributors
+## 👤 Project Author
 	
- • Kaushik Puttaswamy  - Aspiring Data Engineer
+ • Kaushik Puttaswamy  - Aspiring Data Engineer (https://www.linkedin.com/in/kaushik-puttaswamy-data-analyst/)
 
 📧 For queries, reach out at ```kaushik.p9699@gmail.com```
 
