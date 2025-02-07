@@ -4,6 +4,16 @@
 
 The Crypto Data Processing Pipeline is an end-to-end data processing solution designed to handle cryptocurrency transactions in real time. It leverages AWS Glue, AWS Lambda, Kinesis Firehose, DynamoDB Streams, and Hudi for efficient ETL and analytics. The project processes raw transaction data, performs transformations, categorizes trades based on risk, and stores processed data in an S3-based Hudi table for further analysis uisng AWS QucikSight.
 
+• Real-time data ingestion from DynamoDB streams
+
+• CDC (Change Data Capture) processing with Kinesis Firehose
+
+• Spark-based ETL with AWS Glue and Apache Hudi
+
+• Data lake storage with S3 and AWS Glue Catalog
+
+• Interactive analytics with Athena and QuickSight
+
 ## 📂 Project Structure
 
 Crypto-Data-Processing/
@@ -19,6 +29,7 @@ Crypto-Data-Processing/
 │── Project architecture                      # High-level architecture and data flow
 
 └── README.md                                 # Project documentation (this file)
+
 
 
 
