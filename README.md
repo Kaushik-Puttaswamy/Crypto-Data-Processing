@@ -102,7 +102,7 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 
 ## 🏛 Project Architecture
 
-[!Project Architecture .png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline-Using-AWS-Glue-Kinesis-DynamoDB-Athena-and-QuickSight/blob/main/Project%20Architecture%20.png)
+![Project Architecture .png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline-Using-AWS-Glue-Kinesis-DynamoDB-Athena-and-QuickSight/blob/main/Project%20Architecture%20.png)
 
 ### Data Flow:
 
@@ -119,19 +119,19 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 
 This project follows a real-time data ingestion and processing pipeline:
 	
- 1.	Data Generation (Mock Transactions)
+1. Data Generation (Mock Transactions)
 
 • A Python script (mock_crypto_data_to_dynamodb.py) continuously generates mock crypto transactions.
 
 • The data is inserted into AWS DynamoDB.
 
-2.	Data Streaming & Transformation
+2. Data Streaming & Transformation
 
 • DynamoDB Streams captures changes and forwards them to AWS Kinesis Firehose.
 
 • A Lambda function (lambda_transformer.py) transforms the data from DynamoDB’s format to JSON.
 	
- 3.	Real-Time ETL Processing (AWS Glue)
+3. Real-Time ETL Processing (AWS Glue)
 
 • AWS Glue reads data from S3 (landing zone).
 
@@ -147,7 +147,7 @@ This project follows a real-time data ingestion and processing pipeline:
 
 • Writes processed data into an AWS S3-based Hudi table.
 	
- 4.	Data Storage & Analytics
+4. Data Storage & Analytics
 
 • Processed Data: Stored in an S3 Hudi table (processed_crypto_txn).
 
