@@ -48,57 +48,57 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 
 1. AWS Account & Services
 	
- • An AWS Account with access to:
+ 	• An AWS Account with access to:
 	
- • AWS Glue (for ETL and data transformation)
+ 	• AWS Glue (for ETL and data transformation)
 	
- • AWS DynamoDB (for storing raw crypto transactions)
+ 	• AWS DynamoDB (for storing raw crypto transactions)
 	
- • AWS Kinesis Firehose (for real-time streaming)
+ 	• AWS Kinesis Firehose (for real-time streaming)
 	
- • AWS Lambda (for data transformation)
+ 	• AWS Lambda (for data transformation)
 	
- • AWS S3 (for storing raw and processed data)
+ 	• AWS S3 (for storing raw and processed data)
 	
- • AWS Athena (for querying processed data)
+ 	• AWS Athena (for querying processed data)
 	
- • AWS QuickSight (for visualizing insights)
+ 	• AWS QuickSight (for visualizing insights)
 
 2. AWS CLI & SDKs
 	
- • Install and configure AWS CLI:
+ 	• Install and configure AWS CLI:
 
-```pip install awscli```
+	```pip install awscli```
 
-```aws configure``` 
+	```aws configure``` 
 
 3. Python & Dependencies
 	
-• Install Python 3.x and required libraries:
+	• Install Python 3.x and required libraries:
 
-```pip install faker``` 
+	```pip install faker``` 
 
-```pip install boto3``` 
+	```pip install boto3``` 
 
 4. Permissions & IAM Roles
 
-• Create IAM roles with the following policies:
+	• Create IAM roles with the following policies:
 
-• Glue Service Role (AWSGlueServiceRole)
+	• Glue Service Role (AWSGlueServiceRole)
 
-• Lambda Execution Role (AWSLambdaBasicExecutionRole)
+	• Lambda Execution Role (AWSLambdaBasicExecutionRole)
+	
+	• Kinesis Firehose Access Policy
 
-• Kinesis Firehose Access Policy
-
-• DynamoDB Stream Access Policy
+	• DynamoDB Stream Access Policy
 
 5. AWS S3 Bucket for Storage
 	
-• Create an S3 bucket for storing raw and processed data.
+	• Create an S3 bucket for storing raw and processed data.
 
 6. Enable DynamoDB Streams
 
-• Enable DynamoDB Streams on the CryptoTransactions table for real-time data ingestion.
+	• Enable DynamoDB Streams on the CryptoTransactions table for real-time data ingestion.
 
 ## 🏛 Project Architecture
 
@@ -106,54 +106,54 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 
 ### Data Flow:
 
-• 1, Mock data generator → DynamoDB
+	• 1, Mock data generator → DynamoDB
 
-• 2, 3 DynamoDB Stream → Kinesis Firehose
+	• 2, 3 DynamoDB Stream → Kinesis Firehose
 
-• 4, Firehose → Lambda (Transformation)
+	• 4, Firehose → Lambda (Transformation)
 
-• 5, 6, 7, 8, 9 Raw S3 → Glue ETL (Hudi Processing)
+	• 5, 6, 7, 8, 9 Raw S3 → Glue ETL (Hudi Processing)
 
-• 10, 11 Processed S3 → Athena → QuickSight
+	• 10, 11 Processed S3 → Athena → QuickSight
 
 
 This project follows a real-time data ingestion and processing pipeline:
 	
 1. Data Generation (Mock Transactions)
 
-• A Python script (mock_crypto_data_to_dynamodb.py) continuously generates mock crypto transactions.
+	• A Python script (mock_crypto_data_to_dynamodb.py) continuously generates mock crypto transactions.
 
-• The data is inserted into AWS DynamoDB.
+	• The data is inserted into AWS DynamoDB.
 
 2. Data Streaming & Transformation
 
-• DynamoDB Streams captures changes and forwards them to AWS Kinesis Firehose.
+	• DynamoDB Streams captures changes and forwards them to AWS Kinesis Firehose.
 
-• A Lambda function (lambda_transformer.py) transforms the data from DynamoDB’s format to JSON.
+	• A Lambda function (lambda_transformer.py) transforms the data from DynamoDB’s format to JSON.
 	
 3. Real-Time ETL Processing (AWS Glue)
 
-• AWS Glue reads data from S3 (landing zone).
+	• AWS Glue reads data from S3 (landing zone).
 
-• Performs data transformations, including:
+	• Performs data transformations, including:
 
-• Risk flagging based on trade value.
+	• Risk flagging based on trade value.
 
-• Price normalization across exchanges.
+	• Price normalization across exchanges.
 
-• Fee adjustments based on transaction size.
+	• Fee adjustments based on transaction size.
 
-• User categorization based on trade volume.
+	• User categorization based on trade volume.
 
-• Writes processed data into an AWS S3-based Hudi table.
+	• Writes processed data into an AWS S3-based Hudi table.
 	
 4. Data Storage & Analytics
 
-• Processed Data: Stored in an S3 Hudi table (processed_crypto_txn).
+	• Processed Data: Stored in an S3 Hudi table (processed_crypto_txn).
 
-• Querying: AWS Athena is used to query Hudi tables.
+	• Querying: AWS Athena is used to query Hudi tables.
 
-• Visualization: QuickSight dashboards are built on Athena queries.
+	• Visualization: QuickSight dashboards are built on Athena queries.
 
 
 
