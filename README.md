@@ -334,5 +334,5 @@ Use AWS Athena or QuickSight to analyze processed data.
 
 This project demonstrates real-time crypto transaction processing using AWS Glue, DynamoDB, and Apache Hudi. The system is scalable, efficient, and provides insights into high-risk transactions, exchange price variations, and trading behaviors.
 
-🚀 Now you’re ready to build a robust data pipeline for crypto analytics! 🎉
+
 
