@@ -178,6 +178,7 @@ Step 2: Setup AWS Kinesis Firehose
 ![Firehose_Stream_Setup.png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Firehose_Stream_Setup.png?raw=true)
 
 📌 Screenshot: Kinesis_Setup_with_Shard_Showing_Records.png
+
 ![Kinesis_Setup_with_Shard_Showing_Records](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Kinesis_Setup_with_Shard_Showing_Records.png?raw=true)
 
 Step 3: Create & Deploy AWS Lambda Function
@@ -193,9 +194,11 @@ Step 3: Create & Deploy AWS Lambda Function
  • Outputs transformed data to Kinesis Firehose.
 
 📌 Screenshot: Lambda_Function_for_Data_Transformation.png
+
 ![Lambda_Function_for_Data_Transformation](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Lambda_Function_for_Data_Transformation.png?raw=true)
 
 📌 Screenshot: Lambda_Function_Permission_Policies.png
+
 ![Lambda_Function_Permission_Policies](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Lambda_Function_Permission_Policies.png?raw=true)
 
 Step 4: Setup AWS Glue for ETL
@@ -272,6 +275,7 @@ Step 6: Visualize Data using QuickSight
  • User Category Distribution
 
  📌 Screenshot: QuickSight_File_Screenshot.png
+ 
 ![QuickSight_File_Screenshot.png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/QuickSight_File_Screenshot.png?raw=true)
 
 
