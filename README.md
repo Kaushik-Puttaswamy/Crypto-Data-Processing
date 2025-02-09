@@ -175,7 +175,10 @@ Step 2: Setup AWS Kinesis Firehose
 
 📌 Screenshot: Firehose_Stream_Setup.png
 
+![Firehose_Stream_Setup.png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Firehose_Stream_Setup.png?raw=true)
+
 📌 Screenshot: Kinesis_Setup_with_Shard_Showing_Records.png
+![Kinesis_Setup_with_Shard_Showing_Records](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Kinesis_Setup_with_Shard_Showing_Records.png?raw=true)
 
 Step 3: Create & Deploy AWS Lambda Function
 
@@ -190,9 +193,10 @@ Step 3: Create & Deploy AWS Lambda Function
  • Outputs transformed data to Kinesis Firehose.
 
 📌 Screenshot: Lambda_Function_for_Data_Transformation.png
+![Lambda_Function_for_Data_Transformation](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Lambda_Function_for_Data_Transformation.png?raw=true)
 
 📌 Screenshot: Lambda_Function_Permission_Policies.png
-
+![Lambda_Function_Permission_Policies](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Lambda_Function_Permission_Policies.png?raw=true)
 
 Step 4: Setup AWS Glue for ETL
 	
