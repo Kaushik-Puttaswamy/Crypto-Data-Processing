@@ -219,11 +219,19 @@ Step 4: Setup AWS Glue for ETL
 
 📌 Screenshot: Glue_Database_Setup.png
 
+![Glue_Database_Setup.png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Glue_Database_Setup.png?raw=true)
+
 📌 Screenshot: Glue_Table_for_Raw_Processed_Data.png
+
+![Glue_Table_for_Raw_Processed_Data](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Glue_Table_for_Raw_Processed_Data.png?raw=true)
 
 📌 Screenshot: Glue_ETL_Setup.png
 
+![Glue_ETL_Setup.png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Glue_ETL_Setup.png?raw=true)
+
 📌 Screenshot: Glue_ETL_Job_Status.png
+
+![Glue_ETL_Job_Status.png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Glue_ETL_Job_Status.png?raw=true)
 
 Step 5: Query Data using AWS Athena
 	
@@ -239,6 +247,8 @@ Step 5: Query Data using AWS Athena
 ``` SELECT * FROM crypto.processed_crypto_txn WHERE risk_flag = 'MEDIUM_RISK'; ```
 
 📌 Screenshot: Athena_Query_Execution_for_Processed_Data.png
+
+![Athena_Query_Execution_for_Processed_Data](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Athena_Query_Execution_for_Processed_Data.png?raw=true)
 
 Step 6: Visualize Data using QuickSight
 	
@@ -261,17 +271,23 @@ Step 6: Visualize Data using QuickSight
  
  • User Category Distribution
 
+ 📌 Screenshot: QuickSight_File_Screenshot.png
+![QuickSight_File_Screenshot.png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/QuickSight_File_Screenshot.png?raw=true)
+
+
 📌 Screenshot: Crypto_Trading_Insights_Dashboard_using_QuickSight.png
 
-📎 link: https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/78dd677e-34d1-4a4f-9b78-82a2f97863ba/views/fe261a5f-630c-404e-ac18-8429d246000e?directory_alias=DataEngineering-QuickSight-Dashboard
+![Crypto_Trading_Insights_Dashboard_using_QuickSight](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Crypto_Trading_Insights_Dashboard_using_QuickSight.png?raw=true)
 
-📌 Screenshot: QuickSight_File_Screenshot.png
+📎 link: https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/78dd677e-34d1-4a4f-9b78-82a2f97863ba/views/fe261a5f-630c-404e-ac18-8429d246000e?directory_alias=DataEngineering-QuickSight-Dashboard
 
 Step 7: Automate Execution with AWS Triggers
 	
  • Set up AWS Glue triggers to run ETL jobs automatically based on new data arrival.
 
 📌 Screenshot: Trigger_Setup.png
+
+![Trigger_Setup.png](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/Trigger_Setup.png?raw=true)
 
 ## 🔥 Key Features & Enhancements
 
