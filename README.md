@@ -165,6 +165,8 @@ Step 1: Configure AWS DynamoDB
 
 📌 Screenshot: DynamoDB_Table_Setup_with_Data_stream_and_CDC_enabled.png
 
+![DynamoDB_Table_Setup_with_Data_stream_and_CDC_enabled](https://github.com/Kaushik-Puttaswamy/Crypto-Data-Processing-and-Analysis-Pipeline/blob/main/Project%20Execution%20Screenshots/DynamoDB_Table_Setup_with_Data_stream_and_CDC_enabled.png?raw=true)
+
 Step 2: Setup AWS Kinesis Firehose
 	
  • Create a Kinesis Firehose delivery stream.
