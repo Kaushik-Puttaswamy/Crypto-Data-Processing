@@ -108,13 +108,13 @@ Before setting up the Crypto Data Processing and Analysis Pipeline, ensure you h
 
 • 1, Mock data generator → DynamoDB
 
-• 2, 3 DynamoDB Stream → Kinesis Firehose
+• 2, 3, DynamoDB Stream → Kinesis Firehose
 
 • 4, Firehose → Lambda (Transformation)
 
-• 5, 6, 7, 8, 9 Raw S3 → Glue ETL (Hudi Processing)
+• 5, 6, 7, 8, 9, Raw S3 → Glue ETL (Hudi Processing)
 
-• 10, 11 Processed S3 → Athena → QuickSight
+• 10, 11, Processed S3 → Athena → QuickSight
 
 
 This project follows a real-time data ingestion and processing pipeline:
